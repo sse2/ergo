@@ -1,0 +1,15 @@
+[package]
+name = "ergo"
+version = "1.0.0"
+edition = "2024"
+
+[dependencies]
+users = "0.11.0"
+log = "0.4.27"
+simplelog = "0.12.2"
+objc2 = "0.6.1"
+objc2-foundation = {version = "0.3.1", features = [
+    "NSString"
+]}
+objc2-app-kit = "0.3.1"
+objc2-core-foundation = "0.3.1"

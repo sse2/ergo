@@ -1,0 +1,8 @@
+/target
+*.dmg
+.DS_Store
+*.app
+*-aarch64
+*-x86_64
+*-universal
+*.lock
