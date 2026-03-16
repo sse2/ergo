@@ -43,13 +43,13 @@ pub fn get_config_path() -> String {
 // gets config file from paths, returns None if no config file exists
 pub fn try_get_config_from_common_paths() -> Option<String> {
     let ergorc = get_config_path();
-    info!("looking for ergorc at: {}", ergorc);
+    debug!("looking for ergorc at: {}", ergorc);
 
     if fs::metadata(&ergorc).is_ok() {
-        info!("found ergorc at: {}", ergorc);
+        debug!("found ergorc at: {}", ergorc);
         Some(fs::read_to_string(ergorc).unwrap_or_else(|_| "verbose".to_string()))
     } else {
-        info!("no ergorc found, first run");
+        debug!("no ergorc found, first run");
         None
     }
 }
@@ -135,7 +135,7 @@ pub fn parse_config(raw: &str) -> AppConfig {
         }
     }
 
-    info!(
+    debug!(
         "config loaded: verbose={}, firstrun={}, service_mode={:?}, {} rule(s)",
         config.verbose,
         config.firstrun,
